@@ -1,0 +1,44 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout title="Page Not Found - Brian Ethier" description="The page you're looking for could not be found.">
+  <div class="error-page">
+    <h1>404</h1>
+    <h2>Page Not Found</h2>
+    <p>Sorry, the page you're looking for doesn't exist or has been moved.</p>
+    <p><a href="/">Return to Home</a></p>
+  </div>
+</MainLayout>
+
+<style>
+  .error-page {
+    text-align: center;
+    padding: 50px 20px;
+  }
+
+  .error-page h1 {
+    font-size: 6rem;
+    margin-bottom: 0;
+    color: #333;
+  }
+
+  .error-page h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #666;
+  }
+
+  .error-page p {
+    margin-bottom: 15px;
+  }
+
+  .error-page a {
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  .error-page a:hover {
+    text-decoration: underline;
+  }
+</style>
