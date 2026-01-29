@@ -1,0 +1,48 @@
+---
+interface Props {
+  company: string;
+  role: string;
+  description: string;
+  years: string;
+  technologies: string;
+  techLabel?: string;
+  logoSrc: string;
+  hasCircle?: boolean;
+}
+
+const {
+  company,
+  role,
+  description,
+  years,
+  technologies,
+  techLabel = "Technologies used:",
+  logoSrc,
+  hasCircle = false
+} = Astro.props;
+---
+
+<div class="row career-row">
+  <div class="col-sm-4 col-12">
+    <div class="career-description left">
+      <h3>{company}</h3>
+      <h4>{role}</h4>
+      <p set:html={description} />
+    </div>
+  </div>
+
+  <div class="col-sm-4 col-12">
+    <div class="career-logo">
+      {hasCircle && <div class="circle"></div>}
+      <img src={logoSrc} alt={`${company} logo`} />
+    </div>
+  </div>
+
+  <div class="col-sm-4 col-12">
+    <div class="career-description right">
+      <h3>{years}</h3>
+      <h4>{techLabel}</h4>
+      <p>{technologies}</p>
+    </div>
+  </div>
+</div>
