@@ -1,0 +1,26 @@
+---
+import StandaloneLayout from '../../layouts/StandaloneLayout.astro';
+
+const demos = [
+  { name: '01 Infinity Circles', path: '/p5/01-infinity-circles' },
+  { name: '02 A Random Walk', path: '/p5/02-a-random-walk' },
+  { name: '03 Single Dropper', path: '/p5/03-single-dropper' },
+  { name: '04 Mouse Dropper', path: '/p5/04-mouse-dropper' },
+  { name: '05', path: '/p5/05' },
+  { name: '06', path: '/p5/06' },
+  { name: '07', path: '/p5/07' },
+];
+---
+
+<StandaloneLayout title="P5.js Demos">
+  <main style="padding: 2rem;">
+    <h1>P5.js demos</h1>
+    <ul>
+      {demos.map((demo, index) => (
+        <li>
+          <a href={demo.path}>{index + 1}. {demo.name}</a>
+        </li>
+      ))}
+    </ul>
+  </main>
+</StandaloneLayout>
