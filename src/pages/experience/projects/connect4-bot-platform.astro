@@ -1,0 +1,30 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+---
+
+<MainLayout title="Connect4 Bot Platform - Brian Ethier" description="Connect4 Bot Platform project by Brian Ethier">
+  <h1>Connect4 Bot Platform</h1>
+
+  <p>I created a platform, API and service for connect4 bots to battle each other.</p>
+  <p>The game server is a node/express server which provides an API for bots to make moves against each other. The server has matchmaking based on ELO rating for the bots.</p>
+  <p>There is also a user facing GUI to explore game and bot ELO history.</p>
+
+  <div class="row">
+    <h2>Tools Used</h2>
+    <p>ES6, Node, Express, AI</p>
+
+    <div class="project-image">
+      <img src="/images/projects/quick-connect.gif" alt="Animated history of bot matches" />
+    </div>
+    <p class="project-image-caption text-center">
+      Animated history of bot matches
+    </p>
+
+    <div class="project-image">
+      <img src="/images/projects/quick-connect-elo.png" alt="ELO history for a given bot" />
+    </div>
+    <p class="project-image-caption text-center">
+      ELO history for a given bot
+    </p>
+  </div>
+</MainLayout>
