@@ -1,0 +1,16 @@
+---
+import StandaloneLayout from '../layouts/StandaloneLayout.astro';
+---
+
+<StandaloneLayout title="Idle Dungeon" description="Idle Dungeon Game">
+  <h1>Idle Dungeon</h1>
+
+  <canvas id="idle-canvas" width="600" height="600" style="border: 1px solid rgba(0,0,0,.27);"></canvas>
+
+  <script is:inline src="/js/idle/idle.js"></script>
+  <script is:inline src="/js/idle/tile.js"></script>
+  <script is:inline src="/js/idle/level.js"></script>
+  <script is:inline src="/js/idle/game.js"></script>
+  <script is:inline src="/js/idle/canvas_game_renderer.js"></script>
+  <script is:inline src="/js/idle/application.js"></script>
+</StandaloneLayout>

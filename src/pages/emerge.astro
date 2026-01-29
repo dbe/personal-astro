@@ -1,0 +1,14 @@
+---
+import StandaloneLayout from '../layouts/StandaloneLayout.astro';
+---
+
+<StandaloneLayout title="Emerge Game" description="Emerge Game">
+  <h1>Emerge Game</h1>
+
+  <!-- PIXI.js for graphics rendering -->
+  <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.8.9/pixi.min.js"></script>
+  <!-- Victor.js for vector math -->
+  <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/victor/1.1.0/victor.min.js"></script>
+  <!-- Game application -->
+  <script is:inline src="/js/emerge/application.js"></script>
+</StandaloneLayout>
