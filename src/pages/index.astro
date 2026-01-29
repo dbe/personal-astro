@@ -2,12 +2,66 @@
 import MainLayout from '../layouts/MainLayout.astro';
 ---
 
-<MainLayout title="Hi. I am Brian Ethier." description="Hi. I am Brian Ethier.">
-  <div id="home-intro">
-    Hi.
+<MainLayout title="Brian Ethier" description="Hi. I am Brian Ethier.">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 id="home-intro">
+        My name is Brian Ethier and I express myself with code
+      </h1>
+
+      <div class="horizontal-line"></div>
+    </div>
   </div>
-  <div class="bio">
-    <p>I am Brian Ethier.</p>
-    <p>Welcome to my personal site.</p>
+
+  <div class="row">
+    <div class="col-md-12">
+      <p class="bio">
+        I'm a software engineer living in beautiful Boulder, Colorado. I started my career in San Francisco helping to build two companies from startup to acquisition. I lived in Saigon, Vietnam for a year and started a grocery delivery company called
+        <a href="/experience/projects/saigon-tiger">Saigon Tiger.</a>
+      </p>
+
+      <p class="bio">
+        When I'm not programming I love to spend my time playing Chess, Go, and Magic the Gathering. I travel and attend at least a few Magic the Gathering Grand Prix per year.
+      </p>
+
+      <p class="bio">
+        I'm extremely involved in the local Blockchain community. I started a company called
+        <a href="/experience/projects/solidcoin">Solidcoin</a>
+        which built anodized aluminum coins with QR codes on them to redeem ERC20 tokens on the Ethereum blockchain. I also work on the
+        <a href="/experience/projects/burner-wallet">Burner Wallet,</a>
+        a web-based crypto wallet, allowing people to send and receive crypto by just visiting a website.
+        I wrote the smart contracts for
+        <a href="https://www.stateofthedapps.com/dapps/buffidai" target="_blank">BuffiDai</a>
+        the currency used for ETHDenver 2019. Every attendee was given a Solidcoin, loaded with BuffiDai which was loaded into their Burner Wallet for the event and used to buy food/art.
+      </p>
+
+      <p class="bio">
+        I love game design, and have even designed my own card game. I mixed my love for crypto and games on my art project called
+        <a href="http://eth.rip" target="_blank">ETH.RIP.</a>
+        It's a site where you can provably burn your money, and attach a message for posterity.
+      </p>
+
+      <p class="bio">
+        I also take full advantage of the amazing outdoors that Colorado has to offer. I love to ride my motorcycle, rock climb, ski, hike and play soccer.
+      </p>
+
+      <p class="bio">
+        Here are some projects that I'm very proud of having built!
+      </p>
+      <ul>
+        <li>
+          <a href="/experience/projects/burner-wallet">Burner Wallet</a>
+          - A web based crypto wallet. Transacted over $100k for 3000 people in a weekend at ETHDenver.
+        </li>
+        <li>
+          <a href="/experience/projects/chess-chat-bot">Chess chat bot</a>
+          - A chat bot created for the Google Home to play chess by voice
+        </li>
+        <li>
+          <a href="/experience/projects/solidcoin">Solidcoin</a>
+          - Physical coins with QR codes allowing the user to redeem cryptocurrency
+        </li>
+      </ul>
+    </div>
   </div>
 </MainLayout>
