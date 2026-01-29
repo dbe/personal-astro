@@ -1,0 +1,187 @@
+// Import Bootstrap CSS
+@import "bootstrap/scss/bootstrap";
+
+// Import Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+// Base font family
+* {
+  font-family: "Roboto", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+}
+
+// Main container
+#main {
+  margin: 30px;
+}
+
+// Left navigation
+#left-nav {
+  margin-bottom: 50px;
+}
+
+// Navigation links
+#nav-links {
+  margin-top: 40px;
+  font-weight: 300;
+  list-style: none;
+  padding-left: 0;
+}
+
+#nav-links a {
+  font-size: 18px;
+  text-decoration: none;
+  // Fallback for older browsers
+  color: #8c8c8c;
+  color: rgba(0, 0, 0, .26);
+
+  &:hover {
+    color: rgba(0, 0, 0, .54);
+  }
+}
+
+#nav-links ul {
+  padding-left: 20px;
+  list-style: none;
+}
+
+#nav-links li {
+  list-style: none;
+}
+
+#nav-links li.selected > a {
+  font-size: 20px;
+  // Fallback for older browsers
+  color: #000;
+  color: rgba(0, 0, 0, .87);
+}
+
+#nav-links li.hidden {
+  display: none;
+}
+
+// Social links
+#social-links {
+  margin-top: 40px;
+  margin-left: 40px;
+}
+
+#social-links a {
+  float: left;
+  margin-right: 10px;
+}
+
+// Career section
+.career-logo {
+  width: 128px;
+  height: 128px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .career-logo::after {
+    display: block;
+    position: relative;
+    top: -5px;
+    height: 210px;
+    width: 1px;
+    margin: 0 auto;
+    z-index: -1;
+    background-color: #ddd;
+    background-color: rgba(0,0,0,.27);
+    content: '';
+  }
+}
+
+@media (max-width: 992px) {
+  .career-logo::after {
+    height: 300px;
+  }
+}
+
+.circle {
+  border: 1px solid rgba(0,0,0,.27);
+  border-radius: 50%;
+  width: 128px;
+  height: 128px;
+  position: absolute;
+  top: 0px;
+}
+
+.career-row {
+  margin-bottom: 75px;
+}
+
+.career-description {
+  width: 80%;
+}
+
+.career-description.left {
+  float: right;
+  text-align: right;
+}
+
+.career-description.right {
+  float: left;
+  text-align: left;
+}
+
+// About section
+.horizontal-line {
+  border-bottom: 1px solid #FFAB91;
+  margin-bottom: 30px;
+}
+
+#home-intro {
+  font-size: 72px;
+  font-weight: 100;
+}
+
+.bio {
+  margin: 30px 0;
+  font-size: 16px;
+}
+
+// Breadcrumb
+h2.crumb {
+  color: rgba(0, 0, 0, .54);
+  font-size: 16px;
+  margin: 0;
+}
+
+h1.crumb {
+  margin: 0;
+}
+
+// CTA section
+#get-started {
+  margin-top: 30px;
+  text-align: center;
+}
+
+#get-started a {
+  background-color: #FF5722;
+}
+
+#cta {
+  border: none;
+  font-weight: 200;
+}
+
+// Projects section
+#slides {
+  width: 80%;
+  margin-top: 30px;
+}
+
+.project-image img {
+  width: 90%;
+}
+
+.project-image-caption {
+  padding: 10px;
+}

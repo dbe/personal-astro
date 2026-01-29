@@ -1,11 +1,13 @@
 ---
+import MainLayout from '../layouts/MainLayout.astro';
 ---
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Brian Ethier</title>
-  </head>
-  <body>
-    <h1>Coming Soon</h1>
-  </body>
-</html>
+
+<MainLayout title="Hi. I am Brian Ethier." description="Hi. I am Brian Ethier.">
+  <div id="home-intro">
+    Hi.
+  </div>
+  <div class="bio">
+    <p>I am Brian Ethier.</p>
+    <p>Welcome to my personal site.</p>
+  </div>
+</MainLayout>

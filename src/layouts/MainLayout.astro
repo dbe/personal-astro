@@ -1,0 +1,64 @@
+---
+import LeftNav from '../components/LeftNav.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import '../styles/global.scss';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = 'Hi. I am Brian Ethier.', description = 'Hi. I am Brian Ethier.' } = Astro.props;
+const currentPath = Astro.url.pathname;
+
+// Determine if we're on an experience page for breadcrumb
+const isExperiencePage = currentPath.startsWith('/experience');
+
+// Build breadcrumb items based on current path
+function getBreadcrumbItems(): { label: string; href?: string }[] {
+  if (!isExperiencePage) return [];
+
+  const items: { label: string; href?: string }[] = [];
+  const pathParts = currentPath.split('/').filter(Boolean);
+
+  if (pathParts.length >= 1) {
+    items.push({ label: 'Experience', href: '/experience' });
+  }
+
+  if (pathParts.length >= 2) {
+    const secondPart = pathParts[1];
+    const label = secondPart.charAt(0).toUpperCase() + secondPart.slice(1);
+    items.push({ label, href: `/experience/${secondPart}` });
+  }
+
+  return items;
+}
+
+const breadcrumbItems = getBreadcrumbItems();
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-site-verification" content="-tDtb4IAgSdQqvEJDcfzE1V79zL77jEoptcKcT802ow" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row" id="main">
+        <div class="col-sm-3" id="left-nav">
+          <LeftNav currentPath={currentPath} />
+        </div>
+        <div class="col-sm-9">
+          {isExperiencePage && breadcrumbItems.length > 0 && (
+            <Breadcrumb items={breadcrumbItems} />
+          )}
+          <slot />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

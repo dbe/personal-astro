@@ -1,0 +1,109 @@
+---
+interface Props {
+  currentPath: string;
+}
+
+const { currentPath } = Astro.props;
+
+// Helper to check if path is selected
+function isSelected(path: string): boolean {
+  if (path === '/') {
+    return currentPath === '/' || currentPath === '';
+  }
+  return currentPath === path || currentPath.startsWith(path + '/');
+}
+
+// Helper to check if path should be visible
+function isVisible(parentPath: string): boolean {
+  return currentPath.startsWith(parentPath);
+}
+
+// Project list
+const projects = [
+  'amazon-bitcoins',
+  'burner-wallet',
+  'chess-chat-bot',
+  'connect4-bot-platform',
+  'eth-rip',
+  'rippld',
+  'saigon-tiger',
+  'solidcoin',
+  'touchpoints',
+  'traveljoy'
+];
+
+// Format project name for display
+function formatProjectName(slug: string): string {
+  return slug
+    .split('-')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+}
+---
+
+<div class="row">
+  <div class="col-md-12">
+    <a href="/">
+      <img src="/images/profile-circle.png" alt="Brian Ethier" />
+    </a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <ul id="nav-links">
+      <li class={isSelected('/') && !currentPath.startsWith('/contact') && !currentPath.startsWith('/experience') ? 'selected' : ''}>
+        <a href="/">About</a>
+      </li>
+      <li class={isSelected('/contact') ? 'selected' : ''}>
+        <a href="/contact">Contact</a>
+      </li>
+      <li class={isSelected('/experience') ? 'selected' : ''}>
+        <a href="/experience">Experience</a>
+      </li>
+      <ul class={isVisible('/experience') ? '' : 'hidden'}>
+        <li class={isSelected('/experience/career') ? 'selected' : ''}>
+          <a href="/experience/career">Career</a>
+        </li>
+        <li class={isSelected('/experience/projects') ? 'selected' : ''}>
+          <a href="/experience/projects">Projects</a>
+        </li>
+        <ul class={isVisible('/experience/projects') ? '' : 'hidden'}>
+          <li class={currentPath === '/experience/projects' ? 'selected' : ''}>
+            <a href="/experience/projects">All</a>
+          </li>
+          {projects.map(project => (
+            <li class={isSelected(`/experience/projects/${project}`) ? 'selected' : ''}>
+              <a href={`/experience/projects/${project}`}>{formatProjectName(project)}</a>
+            </li>
+          ))}
+        </ul>
+      </ul>
+      <li>
+        <a href="/resume.pdf" target="_blank">Resume</a>
+      </li>
+      <li>
+        <a href="https://medium.com/@dbe" target="_blank" rel="noopener noreferrer">Writing</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="row d-none d-sm-block">
+  <div class="col-md-12">
+    <div id="social-links">
+      <a href="https://github.com/dbe" target="_blank" rel="noopener noreferrer">
+        <img src="/images/GitHub-Mark-32px.png" alt="GitHub" />
+      </a>
+      <a href="https://www.linkedin.com/in/brianethier/" target="_blank" rel="noopener noreferrer">
+        <img src="/images/linkedin-32px.png" alt="LinkedIn" />
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+  ul.hidden {
+    display: none;
+  }
+</style>

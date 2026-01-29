@@ -1,0 +1,24 @@
+---
+interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+---
+
+{items.length > 0 && (
+  <div class="breadcrumb-container">
+    {items.length >= 1 && (
+      <h2 class="crumb">{items[0].label}</h2>
+    )}
+    {items.length >= 2 && (
+      <h1 class="crumb">{items[1].label}</h1>
+    )}
+    <div class="horizontal-line"></div>
+  </div>
+)}
